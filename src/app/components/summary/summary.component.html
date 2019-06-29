@@ -1,12 +1,12 @@
 <!-- uses NgClass directive to help toggle background color -->
-<div class="mdl-card stock-card mdl-shadow--2dp" [ngClass]="{increase: isPpsitive(), decrease: isNegative()}"
+<div class="mdl-card stock-card mdl-shadow--2dp" [ngClass]="{increase: isPositive(), decrease: isNegative()}"
   style="width: 100%">
   <span>
     <div class="mdl-card__title">
       <h4 style="color: #fff; margin: 0">
         <!-- display the symbol value and converts to uppercase -->
         {{stock?.symbol?.toUpperCase()}}<br />
-        <!-- displays last price and formats it as currency -->
+        <!-- displays last price and formats it as currency (like $111.80)-->
         {{stock?.lastTradePriceOnly | currency: 'USD' : 'symbol' : '.2'}}<br />
         <!-- display the day's change as currency and as percent -->
         {{stock?.change | currency: 'USD' : 'symbol' : '.2'}}({{stock?.changeInPercent | percent: '.2'}})
