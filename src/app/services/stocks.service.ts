@@ -35,7 +35,9 @@ export class StocksService {
     return this.get();
   }
   //method to call HttpClient service to load stock values from API
-  if(symbols) {
-    return this.http.get<Array<StockInterface>>(service + '/stocks/snapshot?symbols=' + symbols.join());
+  load(symbols) {
+    if (symbols) {
+      return this.http.get<Array<StockInterface>>(service + '/stocks/snapshot?symbols=' + symbols.join());
+    }
   }
 }
