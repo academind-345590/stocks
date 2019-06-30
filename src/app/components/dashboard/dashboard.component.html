@@ -1,1 +1,11 @@
-<p>dashboard works!</p>
+<div class="mdl-grid">
+  <!-- use NgIf to show a loading message until stocks have loaded -->
+  <div class="mdl-cell mdl-cell--12-col" *ngIf="!atocks" style="text-align: center">
+    Loading ...
+  </div>
+  <!-- use NgFor to loop over each stock -->
+  <div class="mdl-cell mdl-cell--3-col" *ngFor="let stock of stocks">
+    <!-- instantiate a Summary component for each stock and pass thay stock data -->
+    <summary [stock]="stock"></summary>
+  </div>
+</div>
