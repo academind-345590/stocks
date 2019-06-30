@@ -12,6 +12,8 @@ import { ManageComponent } from './components/manage/manage.component';
 
 import { FormsModule } from '@angular/forms';
 
+import { AppRoutes } from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    AppRoutes,
   ],
   providers: [StocksService],
   bootstrap: [AppComponent]
